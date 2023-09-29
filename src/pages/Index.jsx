@@ -4,11 +4,10 @@ import { getClients } from "../api/clientes";
 
 const Index = () => {
     const clientes = useLoaderData();
-
     return ( <>
         <h1 className="font-black text-4xl text-blue-900">Clients</h1>
         <p className="mt-3">Manage your clients</p>
-        {clientes.length ? (
+        { clientes.length ? (
             <table className="w-full bg-white shadow mt-5 table-auto rounded-md overflow-hidden">
                 <thead className="bg-blue-800 text-white">
                     <tr>

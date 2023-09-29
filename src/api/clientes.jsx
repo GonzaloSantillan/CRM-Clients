@@ -1,7 +1,8 @@
 export async function getClients(){
     const respuesta = await fetch(import.meta.env.VITE_API_URL); 
     const data = await respuesta.json();
-    return data;
+    //console.log(Object.keys(data).map(key => data[key]));
+    return Object.keys(data).map(key => data[key]);
 }
 
 export async function getClient(id){
@@ -12,6 +13,7 @@ export async function getClient(id){
 
 export async function addClient(cliente){
     try{
+        cliente.id=Date.now();
         const respuesta = await fetch(import.meta.env.VITE_API_URL,{
             method:"POST",
             body:JSON.stringify(cliente),

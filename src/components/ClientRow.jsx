@@ -4,7 +4,7 @@ import { destroyClient } from "../api/clientes";
 const ClientRow = ({ client }) => {
   const { nombre, empresa, email, telefono, id } = client;
   const navigate = useNavigate();
-
+  //console.log(client);
   return (
     <tr className="border-b">
       <td className="p-5 space-y-2">
